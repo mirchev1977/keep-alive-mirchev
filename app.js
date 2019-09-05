@@ -16,7 +16,17 @@ function keepAlive () {
              });
         } catch ( err ) {
             console.log( err );
-        }
+        };
+
+        try {
+            https.get(
+                "https://nodejs-proj-004-library-mvc.herokuapp.com/admin/restore",
+                resp => {
+                 console.log( 'nodejs-proj-004-library-mvc.herokuapp.com/admin/restore' );
+                });
+        } catch ( err ) {
+            console.log( err );
+        };
     }, 5000 );
 }
 
