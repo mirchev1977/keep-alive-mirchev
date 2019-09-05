@@ -44,7 +44,7 @@ function keepAlive () {
             console.log( err );
         };
 
-    }, 20 * 1000 );
+    }, 20 * 60 * 1000 );
 }
 
 
