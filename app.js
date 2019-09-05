@@ -27,7 +27,7 @@ function keepAlive () {
         } catch ( err ) {
             console.log( err );
         };
-    }, 5000 );
+    }, 20 * 60 * 1000 );
 }
 
 app.listen( process.env.PORT || 5000 );
