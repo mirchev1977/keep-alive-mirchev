@@ -12,7 +12,7 @@ function keepAlive () {
             https.get( 
             'https://nodejs-proj-002-our-library.herokuapp.com', 
                 res => {
-                 console.log( 'nodejs-proj-002-our-library.herokuapp.com' );
+                 //console.log( 'nodejs-proj-002-our-library.herokuapp.com' );
              });
         } catch ( err ) {
             console.log( err );
@@ -22,7 +22,7 @@ function keepAlive () {
             https.get(
                 "https://nodejs-proj-004-library-mvc.herokuapp.com/admin/restore",
                 resp => {
-                 console.log( 'nodejs-proj-004-library-mvc.herokuapp.com/admin/restore' );
+                 //console.log( 'nodejs-proj-004-library-mvc.herokuapp.com/admin/restore' );
                 });
         } catch ( err ) {
             console.log( err );
