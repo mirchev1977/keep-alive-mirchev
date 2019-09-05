@@ -11,8 +11,8 @@ app.use( '/', ( req, res, next ) => {
 }  );
 
 function keepAlive () {
-    clearInterval();
-    setInterval( () => {
+    clearTimeout();
+    setTimeout( () => {
         //"https://nodejs-proj-002-our-library.herokuapp.com"
         try {
             https.get( 
@@ -44,7 +44,7 @@ function keepAlive () {
             console.log( err );
         };
 
-    }, 10 * 1000 );
+    }, 20 * 1000 );
 }
 
 
