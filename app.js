@@ -33,7 +33,7 @@ keepAlive();
 //    }, 10 * 1000 );
 //}
 
-app.use( ( req, res, next ) => {
+app.use( '/', ( req, res, next ) => {
     res.write( 'It is working' );
     res.end();
 }  );
