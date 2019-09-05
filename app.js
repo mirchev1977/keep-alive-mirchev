@@ -13,7 +13,6 @@ app.use( '/', ( req, res, next ) => {
 function keepAlive () {
     clearTimeout();
     setTimeout( () => {
-        //"https://nodejs-proj-002-our-library.herokuapp.com"
         try {
             https.get( 
             'https://keep-alive-mirchev.herokuapp.com', 
