@@ -26,6 +26,16 @@ function keepAlive () {
 
         try {
             https.get( 
+            'https://nodejs-proj-001-our-library.herokuapp.com/', 
+                res => {
+                 console.log( 'nodejs-proj-001' );
+             });
+        } catch ( err ) {
+            console.log( err );
+        };
+
+        try {
+            https.get( 
             'https://nodejs-proj-002-our-library.herokuapp.com', 
                 res => {
                  console.log( 'nodejs-proj-002' );
