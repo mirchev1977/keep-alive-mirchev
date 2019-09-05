@@ -1,0 +1,18 @@
+{
+  "name": "keepalive",
+  "version": "1.0.0",
+  "description": "keeps apps alive",
+  "main": "app.js",
+  "scripts": {
+      "start": "node app.js"
+  },
+  "keywords": [
+    "keep",
+    "alive"
+  ],
+  "author": "Miroslav Mirchev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
