@@ -52,6 +52,16 @@ function keepAlive () {
             console.log( err );
         };
 
+        try {
+            https.get(
+                "https://nodejs-proj-005-cars.herokuapp.com/admin/restore",
+                resp => {
+                 console.log( 'nodejs-proj-005' );
+                });
+        } catch ( err ) {
+            console.log( err );
+        };
+
     }, 20 * 60 * 1000 );
 }
 
