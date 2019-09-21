@@ -28,7 +28,7 @@ app.use( '/', ( req, res, next ) => {
 
 function keepAlive () {
     clearTimeout();
-    const promise = ( ( resolve, reject ) => {
+    const promise = new Promise( ( resolve, reject ) => {
       setTimeout( () => {
           try {
               https.get( 
