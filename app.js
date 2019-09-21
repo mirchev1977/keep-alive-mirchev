@@ -5,66 +5,89 @@ const app = express();
 
 app.use( '/', ( req, res, next ) => {
 
-    keepAlive();
-
-    res.write( 'It is working' );
-    res.end();
+    keepAlive().then( msg => {
+      try {
+        callApps();
+        res.write( 'Success: It is working' );
+        res.end();
+      } catch( err ) {
+        res.write( 'Success: It is working' );
+        res.end();
+      };
+    } ).catch( err => {
+      try {
+        callApps();
+        res.write( 'Error: It is working' );
+        res.end();
+      } catch( err ) {
+        res.write( 'Error: It is working' );
+        res.end();
+      };
+    } );
 }  );
 
 function keepAlive () {
     clearTimeout();
-    setTimeout( () => {
-        try {
-            https.get( 
-            'https://keep-alive-mirchev.herokuapp.com', 
-                res => {
-                 console.log( 'proj-keep-alive' );
-             });
-        } catch ( err ) {
-            console.log( err );
-        };
+    const promise = ( ( resolve, reject ) => {
+      setTimeout( () => {
+          try {
+              https.get( 
+              'https://keep-alive-mirchev.herokuapp.com', 
+                  res => {
+                   console.log( 'proj-keep-alive' );
+                    resolve( 'proj-keep-alive' );
+               });
+          } catch ( err ) {
+              console.log( err );
+              reject( err );
+          }; 
+      }, 20 * 60 * 1000 );
+    } );
+    return promise;
+}
 
-        try {
-            https.get( 
-            'https://nodejs-proj-001-our-library.herokuapp.com/', 
-                res => {
-                 console.log( 'nodejs-proj-001' );
-             });
-        } catch ( err ) {
-            console.log( err );
-        };
+function callApps () {
+  try {
+      https.get( 
+      'https://nodejs-proj-001-our-library.herokuapp.com/', 
+          res => {
+           console.log( 'nodejs-proj-001' );
+       });
+  } catch ( err ) {
+      console.log( err );
+  };
 
-        try {
-            https.get( 
-            'https://nodejs-proj-002-our-library.herokuapp.com', 
-                res => {
-                 console.log( 'nodejs-proj-002' );
-             });
-        } catch ( err ) {
-            console.log( err );
-        };
+  try {
+      https.get( 
+      'https://nodejs-proj-002-our-library.herokuapp.com', 
+          res => {
+           console.log( 'nodejs-proj-002' );
+       });
+  } catch ( err ) {
+      console.log( err );
+  };
 
-        try {
-            https.get(
-                "https://nodejs-proj-004-library-mvc.herokuapp.com/admin/restore",
-                resp => {
-                 console.log( 'nodejs-proj-004' );
-                });
-        } catch ( err ) {
-            console.log( err );
-        };
+  try {
+      https.get(
+          "https://nodejs-proj-004-library-mvc.herokuapp.com/admin/restore",
+          resp => {
+           console.log( 'nodejs-proj-004' );
+          });
+  } catch ( err ) {
+      console.log( err );
+  };
 
-        try {
-            https.get(
-                "https://nodejs-proj-005-cars.herokuapp.com/admin/restore",
-                resp => {
-                 console.log( 'nodejs-proj-005' );
-                });
-        } catch ( err ) {
-            console.log( err );
-        };
+  try {
+      https.get(
+          "https://nodejs-proj-005-cars.herokuapp.com/admin/restore",
+          resp => {
+           console.log( 'nodejs-proj-005' );
+          });
+  } catch ( err ) {
+      console.log( err );
+  };
 
-    }, 20 * 60 * 1000 );
+
 }
 
 
