@@ -8,22 +8,14 @@ app.use( '/', ( req, res, next ) => {
     keepAlive().then( msg => {
       try {
         callApps();
-        res.write( 'Success: It is working' );
-        res.end();
       } catch( err ) {
-        res.write( 'Success: It is working' );
-        res.end();
+        console.log( err )
       };
-      res.write( 'Success: It is working' );
-      res.end();
     } ).catch( err => {
       try {
         callApps();
-        res.write( 'Error: It is working' );
-        res.end();
       } catch( err ) {
-        res.write( 'Error: It is working' );
-        res.end();
+        console.log( err );
       };
     } );
 
