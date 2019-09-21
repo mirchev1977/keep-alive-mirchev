@@ -38,8 +38,7 @@ function keepAlive () {
               console.log( err );
               reject( err );
           }; 
-      //}, 20 * 60 * 1000 );
-      }, 10000 ); //remove this
+      }, 20 * 60 * 1000 );
     } );
     return promise;
 }
