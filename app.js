@@ -14,6 +14,8 @@ app.use( '/', ( req, res, next ) => {
         res.write( 'Success: It is working' );
         res.end();
       };
+      res.write( 'Success: It is working' );
+      res.end();
     } ).catch( err => {
       try {
         callApps();
@@ -23,6 +25,8 @@ app.use( '/', ( req, res, next ) => {
         res.write( 'Error: It is working' );
         res.end();
       };
+      res.write( 'Success: It is working' );
+      res.end();
     } );
 }  );
 
