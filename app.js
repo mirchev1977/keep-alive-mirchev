@@ -25,9 +25,10 @@ app.use( '/', ( req, res, next ) => {
         res.write( 'Error: It is working' );
         res.end();
       };
-      res.write( 'Success: It is working' );
-      res.end();
     } );
+
+    res.write( 'Success: It is working' );
+    res.end();
 }  );
 
 function keepAlive () {
